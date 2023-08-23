@@ -6,15 +6,19 @@
 # It should print a prompt that makes it clear what 
 # is being calculated. 
 from math import sqrt
+
+def hypotenuse(a, b):
+    c_squared = (int(a))**2 + ((int(b))**2)
+    return sqrt(c_squared)
+
 print("Pythagorean Theorem Calculator")
+
 right_triangle = input("Does your triangle have one 90 degree angle? \n").lower()
 
 if right_triangle == "yes":
     length_a = input("What is the length of side a? \n")
     length_b = input("What is the length of side b? \n")
-    c_squared = (int(length_a))**2 + ((int(length_b))**2)
-    c = sqrt(c_squared)
-    print(f"Your hypotenuse is {c}") 
+    print(f"Your hypotenuse is {hypotenuse(length_a, length_b)}") 
 else:
     print("I'm sorry, I am just a pythagorean theorem calculator")
 
